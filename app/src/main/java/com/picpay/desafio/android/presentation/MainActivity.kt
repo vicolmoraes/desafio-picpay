@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         initViews()
         initObserver()
         viewModel.getUsers()
-
     }
 
     private fun initViews() {
