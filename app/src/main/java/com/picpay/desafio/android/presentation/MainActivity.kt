@@ -30,11 +30,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private fun initViews() {
         recyclerView = findViewById(R.id.recyclerView)
         progressBar = findViewById(R.id.user_list_progress_bar)
-
-        adapter = UserListAdapter()
-        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         progressBar.visibility = View.VISIBLE
     }
 
@@ -43,8 +39,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             when (it) {
                 is UsersViewModel.ResponseState.getUsersSucess -> {
                     progressBar.visibility = View.GONE
-
-                    adapter.users = it.response
+                    recyclerView.adapter = UserListAdapter(it.response)
                 }
                 is UsersViewModel.ResponseState.getUsersError -> {
                     val message = getString(R.string.error)
