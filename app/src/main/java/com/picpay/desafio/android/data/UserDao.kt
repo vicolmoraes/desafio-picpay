@@ -6,12 +6,12 @@ import com.picpay.desafio.android.data.User
 @Dao
 interface UserDao {
     @Query("SELECT * FROM user")
-    suspend fun getAll(): List<User>
+    fun getAll(): List<User>
 
     @Insert
-    suspend fun insertAll(vararg users: List<User>)
+    fun insertAll(vararg users: List<User>)
 
     @Query("DELETE from user")
-    suspend fun deleteAll()
+    fun deleteAll()
 }
     
