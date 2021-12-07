@@ -1,5 +1,6 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.data
 
+import com.picpay.desafio.android.RetrofitConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

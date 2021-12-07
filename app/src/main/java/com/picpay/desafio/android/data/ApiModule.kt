@@ -1,5 +1,6 @@
 package com.picpay.desafio.android
 
+import com.picpay.desafio.android.data.PicPayService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

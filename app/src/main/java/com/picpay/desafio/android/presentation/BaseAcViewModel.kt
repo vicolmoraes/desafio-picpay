@@ -1,4 +1,4 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.presentation
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope

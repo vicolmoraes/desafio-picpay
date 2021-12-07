@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.R
-import com.picpay.desafio.android.UsersViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -40,6 +39,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 is UsersViewModel.ResponseState.getUsersSucess -> {
                     progressBar.visibility = View.GONE
                     recyclerView.adapter = UserListAdapter(it.response)
+                    Toast.makeText(this@MainActivity, "ola", Toast.LENGTH_LONG)
+                        .show()
                 }
                 is UsersViewModel.ResponseState.getUsersError -> {
                     val message = getString(R.string.error)
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     progressBar.visibility = View.GONE
                     recyclerView.visibility = View.GONE
 
-                    Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT)
+                    Toast.makeText(this@MainActivity, message, Toast.LENGTH_LONG)
                         .show()
                 }
             }

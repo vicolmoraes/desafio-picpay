@@ -1,10 +1,14 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.presentation
 
+import UserDao
 import androidx.lifecycle.MutableLiveData
+import com.picpay.desafio.android.data.User
+import com.picpay.desafio.android.data.UserRepository
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class UsersViewModel(private val repository: UserRepository) : BaseAcViewModel()  {
+class UsersViewModel(private val repository: UserRepository, private val dao: UserDao) :
+    BaseAcViewModel() {
 
     val actionState = MutableLiveData<ResponseState>()
 
